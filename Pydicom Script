@@ -1,0 +1,15 @@
+1. Prepare lookip tables files: "image_map.csv" and "personal_map.csv"
+  - Templates are located in "CHoRUS_metadata_deid_instruction/pydicom/loopup_table/"
+
+2. Run the python code: "Pydicom_deid.py"
+  (1) Install Pydicom package: pip install pydicom
+  (2) Run the command:
+      python pydicom_deid.py --map_table_dir <lookup_table_dir> --input_dir <DICOM_input_root_dir> --output_dir <DICOM_output_root_dir> 2>&1 | tee logs.txt
+      - <lookup_table_dir>: Directory containing the lookup table CSV files.
+      - <DICOM_input_root_dir> : Root directory of input DICOM files. The script will display de-identification progress for each subfolder within this directory. It is recommended to organize the subfolders by patient for easier tracking.
+      - <DICOM_output_root_dir>: Root directory where the output DICOM files will be saved. This directory will contain two subfolders:
+        -	dicom_processed: Contains successfully de-identified DICOM files.
+        -	dicom_unprocessed: Contains DICOM files that could not be de-identified because either the PatientID or AccessionNumber was not found in the lookup tables, or the selected DICOM Date tag is not of type DT (DateTime) or DA (Date).
+The output DICOM files will maintain the same relative folder structure as the input directory.
+
+ 
