@@ -54,7 +54,7 @@ A pre-configured file, “config.xml”, is provided in the CTP folder. This fil
 
 3.	Run CTP
 Double-click “Launcher.jar” in the root directory of the software to start the launcher.  In the “General” tab, click “Start” to start data processing. To stop data processing, just click “Stop”. 
-![Screenshot of CTP Software](/assets/images/CTP software screenshot.png)
+![Screenshot of CTP Software](https://github.com/CmCC1435/CTP-deid/blob/main/CTP%20software%20screenshot.png)
 
 
 Testing
